@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Feedback Form</title>
+  <link rel="stylesheet" href="Product Feedback.css">
+</head>
+<body>
+    
+
+  <div class="feedback-form">
+    <h2>Product Feedback</h2>
+    <form id="registerForm" onsubmit="handleSubmit(event)">
+
+        user name<br>
+        <input type="text" placeholder="User name" required>
+        <br><br>
+
+
+        Product Name/serial No <br>
+        <input type="text" placeholder="Name/serial no" required>
+        <br><br> 
+
+         Product Quality<br><br>
+         low-----mid-----high<br>
+        <input type="range" required>
+        <br><br>
+
+
+      <div class="stat-input">
+      <div class="form-group">
+      <label for="stars" class="stat">Rate the Product (by Stars):</label>
+      </div>
+      <div class="stars">
+          <input type="radio" id="star5" name="rating" value="5"  required ><label for="star5">&#9733;</label>
+          <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+          <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+          <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+          <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+      </div>
+      </div>
+
+
+
+      <br><br>
+
+      <div class="form-group">
+        <label for="comments">Additional Feedback:</label><br>
+        <textarea id="comments" name="comments" placeholder="Write your thoughts here..."></textarea>
+      </div>
+
+      
+      <button type="submit" onclick="showpopup(event)">Submit Feedback</button>
+
+    </form>
+  </div>
+
+
+  <script>
+    function handleSubmit(event) {
+            event.preventDefault(); 
+
+            const form = document.getElementById('registerForm');
+
+            if (form.checkValidity()) {
+                alert("Feedback submited!");
+            } else {
+                alert("Please fill the columns.");
+            }
+        }
+  </script>
+
+</body>
+</html>
